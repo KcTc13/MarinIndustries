@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "jsx-a11y",
+    "i18next"
+  ],
+  "rules": {
+    "jsx-a11y/alt-text": "error",
+   "i18next/no-literal-string": [
+  "error",
+  {
+    "framework": "react",
+    "mode": "jsx-text-only"
+  }
+]
+  }
+}
