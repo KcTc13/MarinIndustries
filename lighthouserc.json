@@ -1,0 +1,64 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "https://marin-industries.vercel.app/",
+        "https://marin-industries.vercel.app/servicios",
+        "https://marin-industries.vercel.app/tienda",
+        "https://marin-industries.vercel.app/tienda/producto/b9f86045-3a8e-49d8-b226-91f6d8bfd0e8",
+        "https://marin-industries.vercel.app/cotizacion"
+      ],
+      "numberOfRuns": 3
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": [
+          "error",
+          {
+            "minScore": 0.85
+          }
+        ],
+        "categories:seo": [
+          "error",
+          {
+            "minScore": 0.9
+          }
+        ],
+        "largest-contentful-paint": [
+          "error",
+          {
+            "maxNumericValue": 2500
+          }
+        ],
+        "cumulative-layout-shift": [
+          "error",
+          {
+            "maxNumericValue": 0.1
+          }
+        ],
+        "total-byte-weight": [
+          "error",
+          {
+            "maxNumericValue": 2097152
+          }
+        ],
+        "document-title": [
+          "error",
+          {
+            "minScore": 1
+          }
+        ],
+        "meta-description": [
+          "error",
+          {
+            "minScore": 1
+          }
+        ]
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./reportes/C4-mobile"
+    }
+  }
+}
