@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { container } from "@/src/infrastructure/composition/root-container";
@@ -73,7 +74,14 @@ export default async function PaginaProducto({
           <article className="producto-publico__tarjeta">
             <div className="producto-publico__imagen">
               {producto.imagen ? (
-                <img src={producto.imagen} alt={producto.nombre} />
+                <Image
+                  src={producto.imagen}
+                  alt={producto.nombre}
+                  width={600}
+                  height={640}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
               ) : (
                 <span>Imagen no disponible</span>
               )}

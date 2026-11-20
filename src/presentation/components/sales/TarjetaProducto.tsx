@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import type { Producto } from "@/src/domain/products/product.entity";
 import { useLanguage } from "../../i18n/LanguageProvider";
 export type { Producto };
@@ -42,7 +43,13 @@ export function TarjetaProducto({
         aria-label={`${t.details} ${producto.nombre}`}
         tabIndex={expandida ? -1 : 0}
       >
-        <img src={producto.imagen} alt={producto.nombre} />
+        <Image
+          src={producto.imagen}
+          alt={producto.nombre}
+          width={400}
+          height={300}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
         {producto.oferta && <span className="producto-oferta">{t.offer}</span>}
       </button>
 
